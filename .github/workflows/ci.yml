@@ -1,38 +1,45 @@
 name: CI
 
+#env:
+#  branches: "**"
+#  tags: "v*.*.*"
+
 on:
-  pull_request:
-    paths:
-      - "**.go"
-      - "go.mod"
-      - "go.sum"
-      - "**.js"
-      - "**.mjs"
-      - "**.cjs"
-      - "**.ts"
-      - "**.vue"
-      - "**.html"
-      - "**.css"
-      - "frontend/package.json"
-      - "frontend/package-lock.json"
-      - ".nvmrc"
-  push:
-    branches:
-      - main
-    paths:
-      - "**.go"
-      - "go.mod"
-      - "go.sum"
-      - "**.js"
-      - "**.mjs"
-      - "**.cjs"
-      - "**.ts"
-      - "**.vue"
-      - "**.html"
-      - "**.css"
-      - "frontend/package.json"
-      - "frontend/package-lock.json"
-      - ".nvmrc"
+  schedule:
+    - cron: "17 * * 3 1"
+  workflow_call:
+#   pull_request:
+#    paths:
+#      - "**.go"
+#      - "go.mod"
+#      - "go.sum"
+#      - "**.js"
+#      - "**.mjs"
+#      - "**.cjs"
+#      - "**.ts"
+#      - "**.vue"
+#      - "**.html"
+#      - "**.css"
+#      - "frontend/package.json"
+#      - "frontend/package-lock.json"
+#      - ".nvmrc"
+#  push:
+#    branches:
+#      - main
+#    paths:
+#      - "**.go"
+#      - "go.mod"
+#      - "go.sum"
+#      - "**.js"
+#      - "**.mjs"
+#      - "**.cjs"
+#      - "**.ts"
+#      - "**.vue"
+#      - "**.html"
+#      - "**.css"
+#      - "frontend/package.json"
+#      - "frontend/package-lock.json"
+#      - ".nvmrc"
 
 permissions:
   contents: read

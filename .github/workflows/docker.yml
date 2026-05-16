@@ -7,12 +7,15 @@ permissions:
 env:
   CI_IMAGE_NAME: "3x-ui"
   CI_REGISTRY: "reg.vados.ru"
-
+  branches: "**"
+  tags: "v*.*.*"
 on:
-  workflow_dispatch:
-  push:
-    tags:
-      - "v*.*.*"
+  schedule:
+    - cron: "18 2 * * 3"
+#  workflow_dispatch:
+#  push:
+#    tags:
+#      - "v*.*.*"
 
 jobs:
   build:
